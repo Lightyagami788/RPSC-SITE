@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RPSC Shikshak Forum</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background: url('background.jpeg') no-repeat center center fixed;
+      background-size: cover;
+    }
+    header {
+      background: #004080;
+      color: #fff;
+      padding: 20px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+    .logo-container {
+      display: flex;
+      align-items: center;
+      margin-left: 20px;
+    }
+    .logo-container img {
+      height: 60px;
+      margin-right: 10px;
+    }
+    .logo-container span {
+      font-size: 20px;
+      font-weight: bold;
+    }
+    nav {
+      position: relative;
+      margin-right: 20px;
+    }
+    nav .menu-toggle {
+      display: none;
+      font-size: 26px;
+      cursor: pointer;
+    }
+    nav ul {
+      display: flex;
+      list-style: none;
+    }
+    nav ul li {
+      margin: 0 10px;
+    }
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    @media screen and (max-width: 768px) {
+      nav ul {
+        display: none;
+        flex-direction: column;
+        background-color: #004080;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+      }
+      nav ul.active {
+        display: flex;
+      }
+      nav .menu-toggle {
+        display: block;
+        color: #fff;
+      }
+    }
+    section {
+      padding: 40px 20px;
+      background-color: rgba(255, 255, 255, 0.9);
+    }
+    .motive-content {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .motive-text {
+      flex: 1;
+      padding: 20px;
+      background-color: peachpuff;
+      border: 4px dashed #b22222;
+      border-radius: 10px;
+    }
+    .motive-images {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .motive-images img {
+      
+    }
+    .foundation img {
+      display: block;
+      margin: 0 auto 20px;
+      max-width: 100%;
+      border-radius: 10px;
+      border: 2px solid #ccc;
+    }
+    .achievements {
+         display: flex;
+    align-items: flex-start; /* Aligns top edges */
+    gap: 30px;
+    padding: 20px;
+    }
+    .achievements-text {
+   
+    }
+    .achievements-images {
+      width: 100%;
+      max-width: 660px;
+      border-radius: 10px;
+      border: 2px solid #ccc;
+    }
+
+    .achievements-images img {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 10px;
+      border: 2px solid #ccc;
+    }
+    .members .member {
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      animation: popup 0.5s ease forwards;
+    }
+    .members img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #004080;
+    }
+    @keyframes popup {
+      0% {
+        transform: scale(0.5);
+        opacity: 0;
+      }
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+    .contact iframe {
+      width: 100%;
+      height: 450px;
+      border: none;
+    }
+    footer {
+      background: #004080;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+    }
+    .back-to-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: #004080;
+      color: #fff;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    @media screen and (max-width: 768px) {
+      .motive-content,
+      .achievements {
+        flex-direction: column;
+      }
+      header,
+      nav ul {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo-container">
+      <img src="logo.jpg" alt="RPSC Logo">
+      <span>RPSC Shikshak Forum </span>
+    </div>
+    <nav>
+      <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+      <ul id="nav-menu">
+        <li><a href="#motive">उद्देश्य</a></li>
+        <li>
+          <a href="#">More</a>
+          <ul>
+            <li><a href="#foundation">Foundation</a></li>
+            <li><a href="#achievements">Achievements</a></li>
+            <li><a href="#members">Members</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+
+  <section id="foundation" class="foundation">
+    <h2>परिचय</h2>
+    <img src="meeting.jpeg" alt="Foundation">
+    <p>RPSC शिक्षक फोरम राजस्थान शिक्षक -शिक्षार्थियों को वृहद मंच प्रदान करने वाला संगठन है, यह मंच शैक्षिक गतिविधियों के साथ-साथ सामाजिक सरोकारों में भी अपनी भूमिका  निभाता है,
+इस मंच के गठन का उद्देश्य केवल अपने परिक्षेत्र में शिक्षा का अलख जगाना तथा निराश्रित बालक- बालिकाओं को निरंतर  शिक्षा से जोड़ा रखने के लिए कार्य करता है
+निराश्रित बालक अपनी पढ़ाई बीच में नहीं छोड़े और  ड्रॉप आउट की श्रेणी में नहीं आए इसके लिए फोरम उन्हें आर्थिक मदद प्रदान कर संबलन देता है, वहीं शिक्षकों कि समस्याओं का संकलन कर उचित स्तर पर निराकरण का प्रयास करता है
+आरपीएससी शिक्षक फोरम एक गैर राजनीतिक मंच है अखिल राजस्थान राज्य कर्मचारी संयुक्त महासंघ एकीकृत से यह मंच संबद्धता रखता है 
+
+इस फोरम का एकमात्र उद्देश्य,एक लक्ष्य, साक्षर हो समूचा प्रदेश है 
+इसके लिए समय-समय पर शैक्षिक वातावरण निर्माण के कार्यक्रम तथा सामाजिक कार्यक्रमों को भी मंच द्वारा संचालित किया जाता है</p>
+  </section>
+
+
+  <section id="motive">
+    <h2>उद्देश्य</h2>
+    <div class="motive-content">
+      <div class="motive-text">
+        <p>👉 क्षेत्र में शैक्षिक वातावरण का निर्माण करना<br>
+        👉 शिक्षार्थियों की समस्याओं का संकलन कर निराकरण में सहयोग प्रदान करना<br>
+        👉 निराश्रित बालक बालिकाओं की आर्थिक मदद कर उन्हें शिक्षा से जोड़े रखना<br>
+        👉 शिक्षकों की मांगों को सक्षम स्तर पर उठाना और उनका समाधान करवाना<br>
+        👉 क्षेत्र में देश भक्ति की भावना जागृत करने हेतु समय-समय पर राष्ट्रीय कार्यक्रम आयोजित करना<br>
+        👉 परिक्षेत्र में व्याप्त राष्ट्रीय समस्याओं पर चिंतन करना और  उसके निराकरण के लिए माहौल तैयार करना<br>
+        👉 परिक्षेत्र में व्याप्त सामाजिक कुरीतियों को दूर करने के लिए  कार्यक्रम आयोजित कर जागृति पैदा करना</p>
+      </div>
+  </section>
+
+  
+  <section id="achievements" class="achievements">
+    <div class="achievements-text">
+      <h2>कार्यक्रम</h2>
+      <h4>✒️RPSC शिक्षक फोरम राजस्थान द्वारा संचालित प्रतिवर्ष के मुख्य- मुख्य कार्यक्रम🔽 <br>
+👉 अनाथ बालिकाओं को निरंतर शिक्षा जोड़े रखने हेतु छात्रवृत्ति, वस्त्र व वर्ष भर कि शिक्षण सामग्री प्रदान करना <br>
+👉 वृक्षारोपण अभियान चलाना <br>
+👉 सर्दी के मौसम में छात्र-छात्राओं को बचाव हेतु स्वेटर वितरण <br>
+👉 कमजोर वर्ग के बालकों को स्कूल बैगों का वितरण <br>
+👉 सरकारी विद्यालय में नामांकन बड़े इसके लिए ग्रास रूट पर सरकार द्वारा प्रदत्त विद्यालयों को सरकारी सुविधाओं का बखान करना <br>
+👉 परी क्षेत्र में सामाजिक सौहार्द बना रहे इसके लिए सामाजिक कार्यक्रमों का आगाज करना <br>
+👉 राष्ट्रीयता की भावना जागृत करने के लिए विभिन्न प्रकार के देशभक्ति कार्यक्रम आयोजित करना</h4>
+    </div>
+    <div class="achievements-images">
+      <img src="achieve2.jpeg" alt="News Coverage">
+      <img src="foundation.jpeg" alt="Hausla Event">
+      <img src="achieve1.jpeg" alt="Banner Ceremony">
+      <img src="achieve3.jpeg" alt="distribution Ceremony">
+    </div>
+  </section>
+
+  <section id="members" class="members">
+    <h2>वर्तमान प्रतिनिधि</h2>
+    <div class="member">
+      <img src="member3.jpeg" alt="Member 1">
+      <p>श्री गंगा लहरी शर्मा - संरक्षक </p>
+    </div>
+    <div class="member">
+      <img src="member2.jpeg" alt="Member 1">
+      <p>भगवान वर्मा - संरक्षक</p>
+    </div>
+    <div class="member">
+      <img src="member1.jpeg" alt="Member 1">
+      <p>रंगलाल मीणा - संरक्षक </p>
+    </div>
+    <div class="member">
+      <img src="member5.jpeg" alt="Member 1">
+      <p>प्रहलाद फाटक्या - जिला अध्यक्ष </p>
+    </div>
+    <div class="member">
+      <img src="member6.jpeg" alt="Member 2">
+      <p>कैलाश शर्मा  - जिला संयोजक
+      </p>
+    </div>
+    <div class="member">
+      <img src="member7.jpeg" alt="Member 2">
+      <p>कालू राम मालपुरिया - प्रदेश संयोजक
+      </p>
+    </div>
+    <div class="member">
+      <img src="member4.jpeg" alt="Member 1">
+      <p>अभय सक्सैना - जिला प्रवक्ता </p>
+    </div>
+    
+    
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact Us</h2>
+    <p>Head Office: RPSC SHIKSHAK FORUM HEAD OFFICE NEAR LBS MOTORS AGRA ROAD DAUSA</p>
+    <p>Join our WhatsApp groups:
+      <br><a href="#">Group 1</a> | <a href="#">Group 2</a>
+    </p>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3799.0193673093486!2d76.3036985!3d26.9001326!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396d8d003112c80b%3A0xcd3b9e0ca48bf088!2sRPSC%20SHIKSHAK%20FORUM%20HEAD%20OFFICE!5e1!3m2!1sen!2sin!4v1750419454916!5m2!1sen!2sin" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 RPSC Shikshak Forum. All rights reserved.</p>
+  </footer>
+
+  <button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'});">↑ Top</button>
+</body>
+</html>
