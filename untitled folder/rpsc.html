@@ -59,6 +59,26 @@
       text-decoration: none;
       font-weight: bold;
     }
+nav ul li ul.dropdown li {
+        display: block;
+      }
+      nav  ul li ul.dropdown {
+        width: 100%;
+        background: #004080;
+        position: absolute;
+        z-index: 999;
+        display: none;
+
+      }
+      nav ul li a:hover{
+        background: #112c66;
+      }
+      nav ul li:hover ul.dropdown{
+        display: block;
+      }
+
+
+
     @media screen and (max-width: 768px) {
       nav ul {
         display: none;
@@ -201,13 +221,14 @@
     <nav>
       <div class="menu-toggle" onclick="toggleMenu()">☰</div>
       <ul id="nav-menu">
-        <li><a href="#motive">उद्देश्य</a></li>
+        <li><a href="#foundation">परिचय</a></li>
+       
         <li>
-          <a href="#">More</a>
-          <ul>
-            <li><a href="#foundation">Foundation</a></li>
-            <li><a href="#achievements">Achievements</a></li>
-            <li><a href="#members">Members</a></li>
+          <a href="#">More ▾</a>
+          <ul class="dropdown">
+            <li><a href="#motive">उद्देश्य</a></li>
+            <li><a href="#achievements">कार्यक्रम</a></li>
+            <li><a href="#members">वर्तमान प्रतिनिधि</a></li>
             <li><a href="#contact">Contact</a></li>
           </ul>
         </li>
